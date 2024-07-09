@@ -1,14 +1,14 @@
-
+print("pls work")
 from flask import Flask, render_template, request 
 from replit import db
 
 
-db["Awsome"] = { "author":"Andy", "rating":"1",  "image":"https://i.pinimg.com/originals/86/14/09/861409c0a92f6777d9b07346766fa00f.gif", "Date finished":"1/1/1"}
-db["Barbaric"] = { "author":"Barry", "rating":"2", "image": "https://i.pinimg.com/736x/68/f2/4c/68f24c81b5b82bee2be4b2bdd699bd1c.jpg", "Date finished":"2/2/2"}
-db["Cool"] = { "author":"Cecil", "rating":"3", "image":"https://i.pinimg.com/736x/63/91/d4/6391d47ec03aa844555dccba7db5fabf.jpg", "Date finished":"3/3/3"}
-db["Dead"] = { "author":"Dad", "rating":"4",  "image":"https://i.pinimg.com/originals/86/14/09/861409c0a92f6777d9b07346766fa00f.gif", "Date finished":"4/4/4"}
+db["Awsome"] = { "author":"Andy", "rating":"1",  "image":"https://i.pinimg.com/originals/86/14/09/861409c0a92f6777d9b07346766fa00f.gif", "df":"1/1/1"}
+db["Barbaric"] = { "author":"Barry", "rating":"2", "image": "https://i.pinimg.com/736x/68/f2/4c/68f24c81b5b82bee2be4b2bdd699bd1c.jpg", "df":"2/2/2"}
+db["Cool"] = { "author":"Cecil", "rating":"3", "image":"https://i.pinimg.com/736x/63/91/d4/6391d47ec03aa844555dccba7db5fabf.jpg", "df":"3/3/3"}
+db["Dead"] = { "author":"Dad", "rating":"4",  "image":"https://i.pinimg.com/originals/86/14/09/861409c0a92f6777d9b07346766fa00f.gif", "df":"4/4/4"}
 
-"""del db["Barbatic"]"""
+"""del db["H"]"""
 
 app = Flask('app')
 
@@ -35,6 +35,7 @@ def form_after():
 
 
 #for form but why doesnt it work
+print("carzy")
 
 @app.route('/formafter', methods=['GET', 'POST'])
 def home():
@@ -43,10 +44,9 @@ def home():
     userauthor = request.form['userauthor']
     userstars= request.form['userstars']
     userimage= request.form['userimage']
-    userfinished= request.form['userfinished']
+    userdf= request.form['userdf']
     # Process the name here (e.g., store it in a database)
-    db[name]= { "author":userauthor, "rating":userstars, "image": userimage, "datte finished":userfinished}
-    print(db["rating"])
+    db[name]= { "author":userauthor, "rating":userstars, "image": userimage, "df":userdf}
     print("ho")
     return db[name]
   else:
