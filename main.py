@@ -13,7 +13,12 @@ app = Flask('app')
 
 @app.route('/')
 def hello_world():
- 
+    return render_template(
+        'index.html', db=db
+    )
+
+
+@app.route("/book/<title>")
 def home_func(title):
     return render_template("test1.html", title=title, book=db[title])
 
