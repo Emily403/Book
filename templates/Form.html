@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #00008B;
+  padding: 20px;
+  text-align: center;
+  font-size: 1000 px;
+  color: white;
+}
+
+nav {
+  float: left;
+  width: 30%;
+  height: 300px
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  height: 600px; 
+  background-color:#ADD8E6 ;
+}
+
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+<header>
+  <h2>Books</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+       <h1>Index</h1>
+      <img width = "200" height = "150" src="https://images.inc.com/uploaded_files/image/1920x1080/getty_501794256_2000149020009280253_334740.jpg">
+      <h1></h1>
+      <h1></h1>
+      <button onclick="window.location.href='{{ url_for('hello_world') }}'">Go back to home </button>
+    </ul>
+  </nav>
+
+  <article>
+    <h1>Form</h1>
+    <p>This is to add new books to my read to add to the databease</p>
+    <p>Pls work :>)</p>
+ 
+    
+
+  </article>
+</section>
+
+<footer>
+  <p></p>
+</footer>
+
+</body>
+</html>
