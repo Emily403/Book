@@ -15,7 +15,7 @@ app = Flask('app')
 @app.route('/')
 def hello_world():
     return render_template(
-        'index.html', db=db
+        'index.html', db=db,
     )
 
 
@@ -38,9 +38,9 @@ def form_after():
 print("carzy")
 
 @app.route('/formafter', methods=['GET', 'POST'])
-def home():
+def form():
   if request.method == 'POST':
-    name = request.form['name']
+    name = request.form['title']
     userauthor = request.form['userauthor']
     userstars= request.form['userstars']
     userimage= request.form['userimage']
@@ -48,11 +48,9 @@ def home():
     # Process the name here (e.g., store it in a database)
     db[name]= { "author":userauthor, "rating":userstars, "image": userimage, "df":userdf}
     print("ho")
-    return db[name]
+    return db[title]
   else:
     return render_template('index.html')
-
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
