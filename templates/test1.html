@@ -64,7 +64,9 @@ section::after {
   <nav>
     <ul>
       <h1>Index</h1>
-      <img width = "200" height = "150" src={{book["image"]}}>
+      
+
+      
       <h1></h1>
       <h1></h1>
       <button onclick="window.location.href='{{ url_for('hello_world') }}'">Go back to home </button>
@@ -73,10 +75,12 @@ section::after {
 
   <article>
     </div>
+    <img align = right width = "200" height = "150" src={{book["image"]}}  >
     <h1>{{ title}}</h1>
     <p>Author: {{book["author"]}}</p>
     <p>Rating: {{book["rating"]}} star</p>
     <p>Date finished: {{book["df"]}}</p>
+  
     
     
 
