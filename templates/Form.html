@@ -89,14 +89,20 @@ section::after {
       <label for="userauthor">Pls enter author:</label>
       <input type="text" id="userauthor" name="userauthor">
       <h1></h1>
-      <label for="userstars">Pls enter your rating for the book:</label>
-      <input type="text" id="userstars" name="userstars">
+      <label for="userstars">Choose a rating:</label>
+      <select name="userstars" id="userstars">
+        <option value="1">1 star</option>
+        <option value="2">2 stars</option>
+        <option value="3">3 stars</option>
+        <option value="4">4 stars</option>
+        <option value="5">5 stars</option>
+      </select>
       <h1></h1>
       <label for="userimage">Pls enter your image:</label>
       <input type="text" id="userimage" name="userimage">
       <h1></h1>
       <label for="userdf">Pls enter the date finished:</label>
-      <input type="text" id="userdf" name="userdf">
+      <input type="date" id="userdf" name="userdf">
       <h1></h1>
       <button type="submit">Submit</button>
     </form>
