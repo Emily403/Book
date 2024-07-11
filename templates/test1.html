@@ -36,7 +36,7 @@ article {
   float: left;
   padding: 20px;
   width: 70%;
-  height: 600px; 
+  height: 1000vh; 
   background-color:#ADD8E6 ;
 }
 
@@ -70,15 +70,11 @@ section::after {
     <img align = right width = "120" height = "180" src={{book["image"]}}  >
     <h1>{{ title}}</h1>
     <p>Author: {{book["author"]}}</p>
-    <p>Rating: {{book["rating"]}} star</p>
+    <p>Rating: {{book["rating"]}}</p>
     <p>Date finished: {{book["df"]}}</p>
     
     <button onclick="window.location.href='{{ url_for('delete_book', title = title) }}'">Delete book </button>
 
-
-  
-    
-    
 
 
   </article>

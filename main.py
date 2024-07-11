@@ -49,7 +49,12 @@ def form():
     userstars= request.form['userstars']
     userimage= request.form['userimage']
     userdf= request.form['userdf']
-    # Process the name here (e.g., store it in a database)
+    userdf = str(userdf)
+    userdf= "2024-02-05"
+    useryear = userdf[0:4]
+    usermonth = userdf[4:8]
+    userday = userdf[8:10]
+    userdf = userday+usermonth+useryear
     db[title]= { "author":userauthor, "rating":userstars, "image": userimage, "df":userdf}
     print("ho")
     return db[title]
