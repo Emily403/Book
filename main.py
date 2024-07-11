@@ -1,10 +1,9 @@
 print("pls work")
 from flask import Flask, render_template, request, redirect, url_for
 from replit import db 
-
+"""
 db["Barbaric"] = { "author":"Barry", "rating":"2", "image": "https://i.pinimg.com/736x/68/f2/4c/68f24c81b5b82bee2be4b2bdd699bd1c.jpg", "df":"2/2/2", "review":"none"}
-db["Cool"] = { "author":"Cecil", "rating":"3", "image":"https://i.pinimg.com/736x/63/91/d4/6391d47ec03aa844555dccba7db5fabf.jpg", "df":"3/3/3", "review":"none"}
-db["Dead"] = { "author":"Dad", "rating":"4",  "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Eo_circle_pink_number-4.svg/1200px-Eo_circle_pink_number-4.svg.png", "df":"4/4/4", "review":"none"}
+"""
 
 
 app = Flask('app')
@@ -34,7 +33,7 @@ def form_after():
     return render_template('Proof form worked.html',db=db,)
     
 #
-    
+
 #for form but why doesnt it work
 print("carzy")
 
@@ -70,8 +69,10 @@ def search():
         return "something odd going on"
     query = request.form.get("query")
     matches=[]
+    queryl = query.lower()
     for key in db.keys():
-        if query in key:
+        keyl = key.lower()
+        if queryl in keyl:
             ifone = key
             matches.append(key)
     if len(matches) > 1:
