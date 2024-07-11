@@ -68,11 +68,17 @@ section::after {
   <article>
     </div>
     <img align = right width = "120" height = "180" src={{book["image"]}}  >
+    <h1></h1>
+    <h1> </h1>
     <h1>{{ title}}</h1>
+    <p> ‎ </p>
+
     <p>Author: {{book["author"]}}</p>
     <p>Rating: {{book["rating"]}}</p>
     <p>Date finished: {{book["df"]}}</p>
-    
+    <h1></h1>
+    <p>Review: {{book["review"]}}</p>
+
     <button onclick="window.location.href='{{ url_for('delete_book', title = title) }}'">Delete book </button>
 
 

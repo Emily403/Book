@@ -2,13 +2,10 @@ print("pls work")
 from flask import Flask, render_template, request, redirect, url_for
 from replit import db 
 
+db["Barbaric"] = { "author":"Barry", "rating":"2", "image": "https://i.pinimg.com/736x/68/f2/4c/68f24c81b5b82bee2be4b2bdd699bd1c.jpg", "df":"2/2/2", "review":"none"}
+db["Cool"] = { "author":"Cecil", "rating":"3", "image":"https://i.pinimg.com/736x/63/91/d4/6391d47ec03aa844555dccba7db5fabf.jpg", "df":"3/3/3", "review":"none"}
+db["Dead"] = { "author":"Dad", "rating":"4",  "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Eo_circle_pink_number-4.svg/1200px-Eo_circle_pink_number-4.svg.png", "df":"4/4/4", "review":"none"}
 
-db["Awsome"] = { "author":"Andy", "rating":"1",  "image":"https://i.pinimg.com/originals/86/14/09/861409c0a92f6777d9b07346766fa00f.gif", "df":"1/1/1"}
-db["Barbaric"] = { "author":"Barry", "rating":"2", "image": "https://i.pinimg.com/736x/68/f2/4c/68f24c81b5b82bee2be4b2bdd699bd1c.jpg", "df":"2/2/2"}
-db["Cool"] = { "author":"Cecil", "rating":"3", "image":"https://i.pinimg.com/736x/63/91/d4/6391d47ec03aa844555dccba7db5fabf.jpg", "df":"3/3/3"}
-db["Dead"] = { "author":"Dad", "rating":"4",  "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Eo_circle_pink_number-4.svg/1200px-Eo_circle_pink_number-4.svg.png", "df":"4/4/4"}
-
-"""del db["h"]"""
 
 app = Flask('app')
 
@@ -49,13 +46,14 @@ def form():
     userstars= request.form['userstars']
     userimage= request.form['userimage']
     userdf= request.form['userdf']
+    userrev= request.form['userrev']
     userdf = str(userdf)
     userdf= "2024-02-05"
     useryear = userdf[0:4]
     usermonth = userdf[4:8]
     userday = userdf[8:10]
     userdf = userday+usermonth+useryear
-    db[title]= { "author":userauthor, "rating":userstars, "image": userimage, "df":userdf}
+    db[title]= { "author":userauthor, "rating":userstars, "image": userimage, "df":userdf, "review":userrev}
     print("ho")
     return db[title]
   else:
