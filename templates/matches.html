@@ -70,50 +70,14 @@ section::after {
   <nav>
        {% include 'header.html' %}
   </nav>
-
-
-
-
-  
   <article>
-    <h1>Welcome to Emilys personal review site</h1>
-    <p>It keeos track of my books read, opinions of them, and when I read them</p>
-    <p>Enjoy :>)</p>
+    {% for title in matches%}
+      <h1>  </h1>
 
-    <button  onclick="window.location.href='{{ url_for('new_template') }}'">Go to add new books to database</button>
-
-    <h2></h2>
-
-    <form action = "/search", method="POST">
-      <input type="text" name="query" placeholder="Enter your search...">
-      <button type="submit">Search</button>
-    </form>
-    <h2>Results:</h2>
-    <div id="results"></div>
-
-
-
+      <p> - {{title}} </p>
+      <li><a href="/book/{{title}}">{{title}}  by {{ db[title]["author"]}}</a></li>
     
-    
-    {% for title in sorteddb%}
-    <h1> {{title}} </h1>
-  
-    <p> - {{ db[title]["author"]}} </p>
-    <img align = middle width = "60" height = "90" src={{db[title]["image"]}}  >
-    {% endfor%}
-    
-  
-    
+      {% endfor%}
   </article>
-</section>
-
-<footer>
-  <p></p>
-</footer>
-
-</body>
-</html>
-
-
 
 
