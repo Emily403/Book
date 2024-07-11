@@ -68,17 +68,25 @@ def search():
     query = request.form.get("query")
     matches=[]
     for key in db.keys():
-        if key == query:
-           return redirect(url_for('home_func' , title = key))
-        elif query in key:
+        if query in key:
+            ifone = key
             matches.append(key)
-    if len(matches) > 0:
+    if len(matches) > 1:
         return redirect(url_for('multiple_matches', matches=matches))
-    return "not found"
+    elif len(matches)== 1:
+        return redirect(url_for('home_func' , title = ifone))
+    else:
+        return redirect(url_for('no_matches'))
+    
+    
 
 @app.route("/multi")
 def multiple_matches():
     return render_template("matches.html", matches=request.args.getlist("matches"), db=db)
+
+@app.route("/nomulti")
+def no_matches():
+    return render_template("nomatches.html")
             
             
 

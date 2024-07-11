@@ -1,7 +1,11 @@
+
+<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 * {
   box-sizing: border-box;
@@ -22,7 +26,7 @@ header {
 
 nav {
   float: left;
-  width: 30%;
+  width: 20%;
   height: 300px
   padding: 20px;
 }
@@ -35,60 +39,39 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 70%;
-  height: 600px; 
+  width: 80%;
+  height: 1000px; 
   background-color:#ADD8E6 ;
 }
 
 
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-    }
-  }
 section::after {
   content: "";
   display: table;
   clear: both;
 }
 
+
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>
 
 <header>
   <h2>Books</h2>
 </header>
 
-
 <section>
   <nav>
-    {% include 'header.html' %}
+       {% include 'header.html' %}
   </nav>
-
   <article>
-    </div>
-    <img align = right width = "120" height = "180" src={{book["image"]}}  >
-    <h1>{{ title}}</h1>
-    <p>Author: {{book["author"]}}</p>
-    <p>Rating: {{book["rating"]}} star</p>
-    <p>Date finished: {{book["df"]}}</p>
-    
-    <button onclick="window.location.href='{{ url_for('delete_book', title = title) }}'">Delete book </button>
-
-
-  
-    
-    
-
-
+    <p>Error no matches found</p>
   </article>
-</section>
-
-<footer>
-  <p></p>
-</footer>
-
-</body>
-</html>
 
 

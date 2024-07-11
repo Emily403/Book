@@ -74,8 +74,8 @@ section::after {
     {% for title in matches%}
       <h1>  </h1>
 
-      <p> - {{title}} </p>
-      <li><a href="/book/{{title}}">{{title}}  by {{ db[title]["author"]}}</a></li>
+      <h1><a href="/book/{{title}}" style="text-decoration:none">{{title}}</a></h1>
+      <p> - {{ db[title]["author"]}} </p>
     
       {% endfor%}
   </article>
