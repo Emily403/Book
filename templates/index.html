@@ -90,15 +90,14 @@ section::after {
     </form>
 
 
-
-
-    
-    
+    <hr> </hr>
     {% for title in sorteddb%}
-    <h1> {{title}} </h1>
-  
+    <img align = right width = "60" height = "90" src={{db[title]["image"]}}  >
+    <h1><a href="/book/{{title}}" style="text-decoration:none">{{title}}</a></h1>
     <p> - {{ db[title]["author"]}} </p>
-    <img align = middle width = "60" height = "90" src={{db[title]["image"]}}  >
+    <p> - {{ db[title]["rating"]}} </p>
+
+    <hr> </hr>
     {% endfor%}
     
   

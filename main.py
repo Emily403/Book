@@ -77,7 +77,7 @@ def search():
     if len(matches) > 1:
         return redirect(url_for('multiple_matches', matches=matches))
     elif len(matches)== 1:
-        return redirect(url_for('home_func' , title = ifone))
+        return redirect(url_for('home_func' , title = ifone, query = query))
     else:
         return redirect(url_for('no_matches'))
     

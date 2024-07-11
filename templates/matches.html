@@ -71,12 +71,15 @@ section::after {
        {% include 'header.html' %}
   </nav>
   <article>
+    <h1>Results for search</h1>
+    <hr> </hr>
     {% for title in matches%}
-      <h1>  </h1>
-
       <h1><a href="/book/{{title}}" style="text-decoration:none">{{title}}</a></h1>
+      <img align = right width = "60" height = "90" src={{db[title]["image"]}}  >
       <p> - {{ db[title]["author"]}} </p>
-    
+      <p> - {{ db[title]["rating"]}} </p>
+      <p> - {{ db[title]["df"]}} </p>
+      <hr> </hr>
       {% endfor%}
   </article>
 
