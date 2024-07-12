@@ -73,33 +73,39 @@ section::after {
   </nav>
 
   <article>
-    <h1>Form</h1>
+    <h1>Edit Form</h1>
     <p>This is to add new books to my read to add to the databease</p>
     <p>Pls work :>)</p>
+    <p>{{title}}</p>
+    <p>{{book["author"]}}</p>
+    
     <form method="POST" action="/formafter">
       <label for="title">Pls type book title:</label>
-      <input type="text" id="title" name="title">
+      <input type="text" id="title" name="title" value="{{title}}" >
       <h1></h1>
       <label for="userauthor">Pls enter author:</label>
-      <input type="text" id="userauthor" name="userauthor">
+      <input value = "{{book["author"]}}" type="text" id="userauthor" name="userauthor">
       <h1></h1>
       <label for="userstars">Choose a rating:</label>
       <select name="userstars" id="userstars">
-        <option value="1">1 star</option>
-        <option value="2">2 stars</option>
-        <option value="3">3 stars</option>
-        <option value="4">4 stars</option>
-        <option value="5">5 stars</option>
+        <option value="{{book["rating"]}}" >{{book["rating"]}} stars </option>
+        <option value="1" >1 stars</option>
+        <option value="2" >2 stars</option>
+        <option value="3" >3 stars</option>
+        <option value="4" >4 stars</option>
+        <option value="5" >5 stars</option>
+        
       </select>
       <h1></h1>
       <label for="userimage">Pls enter your image:</label>
-      <input type="text" id="userimage" name="userimage">
+      
+      <input value = "{{book["image"]}}" type="text" id="userimage" name="userimage">
       <h1></h1>
       <label for="userdf">Pls enter the date finished:</label>
-      <input type="date" id="userdf" name="userdf">
+      <input type="date" id="userdf" name="userdf" value = "date()">
       <h1></h1>
       <label for="userrev">Your review of the book: </label>
-      <input type="userrev" id="userrev" name="userrev" style="height:100px; width:350px">
+      <input value= "{{book["review"]}}"  type="userrev" id="userrev" name="userrev" style="height:100px; width:350px">
       <h1></h1>
       <h1></h1>
       <h1></h1>

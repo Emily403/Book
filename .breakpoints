@@ -1,26 +1,3 @@
 {
-  "files": {
-    "main.py": [
-      {
-        "id": "9a7ca4a8-adb7-4570-b665-4af92bb5d8db",
-        "line": 64,
-        "version": 5627,
-        "index": 2137
-      },
-      {
-        "id": "de483173-85b1-4e08-945c-d764f0041e8c",
-        "line": 73,
-        "version": 5627,
-        "index": 2385
-      }
-    ],
-    "templates/index.html": [
-      {
-        "id": "e8c0d297-63bb-404f-b843-5d805fe22258",
-        "line": 68,
-        "version": 1279,
-        "index": 798
-      }
-    ]
-  }
+  "files": {}
 }
