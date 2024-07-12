@@ -3,10 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for
 from replit import db 
 
 
-"""
-db["Barbaric"] = { "author":"Barry", "rating":"2", "image": "https://i.pinimg.com/736x/68/f2/4c/68f24c81b5b82bee2be4b2bdd699bd1c.jpg", "df":"2/2/2", "review":"none"}
-"""
-
 app = Flask('app')
 
 @app.route('/', methods = ["GET", "POST" ])
